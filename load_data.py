@@ -50,10 +50,6 @@ def load_and_separate_data(args, device):
         # concatenate the data for each worker
         each_worker_data = [(torch.stack(each_worker, dim=0)).squeeze(0) for each_worker in each_worker_data]
         each_worker_label = [(torch.stack(each_worker, dim=0)).squeeze(0) for each_worker in each_worker_label]
-        # random shuffle the workers
-        # random_order = np.random.RandomState(seed=args.seed).permutation(num_workers)
-        # each_worker_data = [each_worker_data[i] for i in random_order]
-        # each_worker_label = [each_worker_label[i] for i in random_order]
         order = [10, 11, 15, 12, 17, 5, 6, 7, 8, 9, 0, 1, 3, 4, 14, 2, 16, 13, 18, 19]
         each_worker_data = [each_worker_data[i] for i in order]
         each_worker_label = [each_worker_label[i] for i in order]

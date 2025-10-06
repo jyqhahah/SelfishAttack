@@ -23,7 +23,7 @@ conda activate selfish
 To train the model and launch the SelfishAttack, use the following command (example for **FedAvg**):
 
 ```bash
-python3 main.py --dataset=cifar10 --model=cnnc --bias=0.7 --seed=1 --epochs=700 \
+python3 main.py --dataset=cifar10 --model=cnnc --bias=0.7 --seed=1 --epochs=600 \
         --lr=0.0001 --batchsize=128 --nworkers=20 --nbyz=6 --cmax=6 --aggregation=fedavg \
         --gpu=3 --attack_epoch=50 --local_round=3 --alpha=0.0 --epsilon=0.1
 ````
